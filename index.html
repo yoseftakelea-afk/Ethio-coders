@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethio Habesha Coders - Learn to Code</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-effect">
+        <div class="logo">
+            <i class="fas fa-code"></i>
+            <span>Ethio Habesha Coders</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <button id="themeToggle" class="icon-btn"><i class="fas fa-moon"></i></button>
+            <button id="langToggle" class="icon-btn"><i class="fas fa-language"></i> EN</button>
+            <button id="voiceToggle" class="icon-btn"><i class="fas fa-microphone"></i></button>
+            <a href="login.html" class="login-btn"><i class="fas fa-user"></i> Login</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="glow-text">Welcome to <span class="ethio-color">Ethio Habesha Coders</span></h1>
+            <p>Empowering Ethiopian students to become world-class developers</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="location.href='register.html'">Start Learning <i class="fas fa-arrow-right"></i></button>
+                <button class="btn-secondary" onclick="scrollToSection('courses')">Explore Courses</button>
+            </div>
+        </div>
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat"><i class="fas fa-users"></i><span>5000+</span><small>Students</small></div>
+            <div class="stat"><i class="fas fa-code"></i><span>50+</span><small>Courses</small></div>
+            <div class="stat"><i class="fas fa-trophy"></i><span>1000+</span><small>Graduates</small></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 data-aos="fade-up">About Our Community</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p>Ethio Habesha Coders is a revolutionary platform dedicated to nurturing the next generation of Ethiopian tech talent. We combine traditional learning with modern AI assistance to provide an unparalleled learning experience.</p>
+                    <div class="highlights">
+                        <div><i class="fas fa-check-circle"></i> 100% Free Access</div>
+                        <div><i class="fas fa-check-circle"></i> AI-Powered Learning</div>
+                        <div><i class="fas fa-check-circle"></i> Amharic & English Support</div>
+                        <div><i class="fas fa-check-circle"></i> Community Projects</div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500" alt="Students coding together">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 data-aos="fade-up">Our Courses</h2>
+            <div class="search-bar" data-aos="fade-up">
+                <i class="fas fa-search"></i>
+                <input type="text" id="courseSearch" placeholder="Search courses...">
+            </div>
+            <div class="course-grid">
+                <div class="course-card" data-category="frontend" data-aos="flip-left">
+                    <i class="fab fa-html5"></i>
+                    <h3>Frontend Development</h3>
+                    <p>HTML5, CSS3, JavaScript, React, and modern frameworks</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <button class="btn-enroll" onclick="enrollCourse('frontend')">Enroll Now</button>
+                </div>
+                <div class="course-card" data-category="backend" data-aos="flip-left" data-aos-delay="100">
+                    <i class="fab fa-php"></i>
+                    <h3>Backend Development</h3>
+                    <p>PHP, Java, Python, MySQL, APIs, and server management</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <button class="btn-enroll" onclick="enrollCourse('backend')">Enroll Now</button>
+                </div>
+                <div class="course-card" data-category="fullstack" data-aos="flip-left" data-aos-delay="200">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Full-Stack Mastery</h3>
+                    <p>Complete web development with real-world projects</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <button class="btn-enroll" onclick="enrollCourse('fullstack')">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 data-aos="fade-up">Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="zoom-in">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Coding Assistant</h3>
+                    <p>Get real-time help with code, debugging, and concepts</p>
+                    <button class="btn-feature" onclick="openAIChat()">Chat with AI →</button>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>Voice Assistant</h3>
+                    <p>Navigate and learn using voice commands in Amharic/English</p>
+                    <button class="btn-feature" onclick="startVoiceAssistant()">Activate Voice →</button>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Progress Tracking</h3>
+                    <p>Track your learning journey with detailed analytics</p>
+                    <button class="btn-feature" onclick="showProgress()">View Progress →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Get In Touch</h2>
+            <div class="contact-content">
+                <form id="contactForm" data-aos="fade-right">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <div class="contact-info" data-aos="fade-left">
+                    <div><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</div>
+                    <div><i class="fas fa-envelope"></i> info@ethiohabeshacoders.com</div>
+                    <div><i class="fab fa-telegram"></i> @EthioHabeshaCoders</div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Modal -->
+    <div id="aiChatModal" class="modal">
+        <div class="modal-content glass-effect">
+            <div class="modal-header">
+                <h3><i class="fas fa-robot"></i> AI Coding Assistant</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">👋 Hi! I'm your AI coding assistant. Ask me anything about programming!</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Ask me about coding...">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification System -->
+    <div id="notification" class="notification"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
